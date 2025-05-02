@@ -1,0 +1,506 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Assets/static/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('Assets/static/Montserrat-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+}
+
+*::selection{
+    background-color: #fff;
+    color: #95C11E;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body::-webkit-scrollbar{
+    display: block;
+    background-color: #95C11E;
+    width: 6px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 50px;
+}
+
+#nav img{
+    height: 75px;
+}
+
+#nav{
+    height: 130px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 120px;
+    gap: 50px;
+    position: fixed;
+    z-index: 99;
+}
+
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+#cursor-blur{
+    height: 400px;
+    width: 400px;
+    background-color: rgba(150, 193, 30, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(80px);
+    z-index: 9;
+}
+
+#nav h4{
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.15vw;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.39);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 #arrow{
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    left: -2%;
+    bottom: 0%;
+    border: 2px solid  #95C11E;
+    transition: all ease 0.5s;
+}
+
+#page1 #arrow i{
+    font-size: 50px;
+    font-weight: 100;
+
+}
+
+#page1 #arrow:hover{
+    scale: 0.4;
+    background-color: #95C11E;
+
+}
+
+#page1 h1{
+    font-size: 7.5vw;
+    position: relative;
+}
+
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: #000;
+    top: -5px;
+    left: -5px;
+    -webkit-text-stroke: 1.5px #95C11E;
+    z-index: -1;
+}
+
+#page1 h2{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#page1 p{
+    font-size: 1.2vw;
+    font-weight: 500;
+    width: 40%;
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller {
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 40s linear infinite ;
+}
+
+
+#scroller h4{
+    display: inline-block;
+    font-family: "Poppins";
+    font-size: 120px;
+    margin-right: 10px;
+    font-weight: 700;
+    color: transparent;
+    transition: all linear 0.5s;
+    -webkit-text-stroke: 2px #fff;
+}
+
+#scroller h4:hover{
+    color: #95C11E;
+    -webkit-text-stroke: #000;
+}
+
+@keyframes scroll {
+    from{
+        transform : translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+    position: relative;
+}
+
+#about-us img{
+    height: 220px;
+    width: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+#about-us-in{
+    width: 50%;
+    text-align: center;
+}
+
+#about-us-in h3{
+    font-size: 45px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+#about-us-in p{
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 300;
+}
+
+#cards-container{
+    /* background-color: red; */
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+
+.card{
+    height: 80%;
+    width: 24%;
+    background-color: blue;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1{
+    background-image: url(./Assets/card1.avif);
+}
+
+#card2{
+    background-image: url(./Assets/card2.webp);
+}
+
+#card3{
+    background-image: url(./Assets/card3.avif);
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding-top: 160px;
+    padding: 30px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+.overlay h4{
+    color: #000;
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    /* white-space: nowrap; */
+    margin-top: 20px;
+}
+
+.overlay p{
+    color: #000;
+    font-size: 16px;
+    margin-top: 6px;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+
+#card1:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+#card2:hover{
+    transform: rotate3d(-1,-1,0,20deg);
+}
+
+#card3:hover{
+    transform: rotate3d(0,1,1,10deg);
+}
+
+#green-div{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #119f3a, #ace022);
+
+}
+
+#green-div h4{
+    width: 45%;
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 30px;
+    text-align: center;
+    color: #000;
+    font-weight: 800;
+}
+
+#green-div img{
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+}
+    
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+#page3>p{
+    font-size: 25px;
+    font-weight: 700;
+    width: 80%;
+    text-align: center;
+    line-height: 45px;
+    text-transform: uppercase;
+}
+
+#page3 img{
+    position: absolute;
+    height: 60px;
+}
+
+#page3 #colon1{
+    left: 5%;
+    top: 25%;
+}
+
+#page3 #colon2{
+    right: 15%;
+    bottom: 25%;
+}
+
+#page4{
+    height: 30vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+}
+
+.elem{
+    height: 70%;
+    width: 28%;
+   overflow: hidden;
+   border-radius: 20px;
+   position: relative;
+   
+   
+}
+
+.elem h2{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    color: #000;
+    font-weight: 700;
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    padding: 5px;
+}
+
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+    transition: all ease 0.5s;
+}
+
+.elem:hover h2{
+    color: #fff;
+    background-color: transparent;
+    transition: all ease 0.5s;
+}
+
+.elem:hover img{
+    scale: 1;
+}
+
+#page4 h1{
+    font-size: 80px;
+    position: absolute;
+    top: -22%;
+    color: #000;
+    -webkit-text-stroke: 2px #fff;
+    font-family: Poppins;
+}
+
+#footer {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 150px;
+    padding: 0 100px;
+}
+
+#footer>img{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+}
+
+#f1 img{
+    height: 100px;
+}
+
+#f1,#f2,#f3,#f4{
+    width: fit-content;
+    position: relative;
+    z-index: 2;
+}
+
+#f2 h3{
+    font-size: 25px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+#f3 h3 {
+    font-size: 1.4vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  #f4 h4 {
+    font-size: 1vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
